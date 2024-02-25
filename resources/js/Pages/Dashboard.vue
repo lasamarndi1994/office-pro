@@ -110,7 +110,10 @@
 </template>
 
 <script setup>
+
+
 import '@material/mwc-select'
+import '@material/mwc-list/mwc-list-item'
 </script>
 
 <style scoped>

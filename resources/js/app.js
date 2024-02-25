@@ -4,6 +4,8 @@ import './bootstrap';
 
 import { createApp, h } from 'vue'
 import { createInertiaApp } from '@inertiajs/vue3'
+import { Link } from '@inertiajs/vue3'
+
 import AppLayout from "./Pages/App.vue";
 
 createInertiaApp({
@@ -13,7 +15,8 @@ createInertiaApp({
   },
   setup({ el, App, props, plugin }) {
     createApp({ render: () => h(App, props) })
-      .mixin({ components: { AppLayout } })
+      .mixin({ components: { AppLayout, Link } })
+
       .use(plugin)
       .mount(el)
   },

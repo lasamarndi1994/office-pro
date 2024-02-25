@@ -4,10 +4,12 @@
  * CSRF token as a header based on the value of the "XSRF" token cookie.
  */
 import 'bootstrap';
-import  'material-icons';
-import  './script.js';
+import 'material-icons';
+import './script.js';
+
+//import
 // import  '@material/mwc-list';
-import  './sb-customizer.js';
+import './sb-customizer.js';
 // import  './custom.js';
 import axios from 'axios';
 window.axios = axios;
