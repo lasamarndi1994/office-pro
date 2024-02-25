@@ -1,0 +1,53 @@
+{
+    "private": true,
+    "type": "module",
+    "scripts": {
+        "dev": "vite",
+        "build": "vite build"
+    },
+    "devDependencies": {
+        "axios": "^1.6.4",
+        "laravel-vite-plugin": "^1.0.0",
+        "vite": "^5.0.0"
+    },
+    "dependencies": {
+        "@inertiajs/vue3": "^1.0.14",
+        "@material/mwc-list": "^0.27.0",
+        "@vitejs/plugin-vue": "^5.0.4",
+        "bootstrap": "^5.3.3",
+        "bootstrap-material-design": "^4.1.3",
+        "material-icons": "^1.13.12",
+        "@material/mwc-base": "^0.27.0",
+        "@material/mwc-button": "^0.27.0",
+        "@material/mwc-checkbox": "^0.27.0",
+        "@material/mwc-circular-progress": "^0.27.0",
+        "@material/mwc-circular-progress-four-color": "^0.27.0",
+        "@material/mwc-dialog": "^0.27.0",
+        "@material/mwc-drawer": "^0.27.0",
+        "@material/mwc-elevation-overlay": "^0.27.0",
+        "@material/mwc-fab": "^0.27.0",
+        "@material/mwc-floating-label": "^0.27.0",
+        "@material/mwc-formfield": "^0.27.0",
+        "@material/mwc-icon": "^0.27.0",
+        "@material/mwc-icon-button": "^0.27.0",
+        "@material/mwc-icon-button-toggle": "^0.27.0",
+        "@material/mwc-line-ripple": "^0.27.0",
+        "@material/mwc-linear-progress": "^0.27.0",
+        "@material/mwc-menu": "^0.27.0",
+        "@material/mwc-notched-outline": "^0.27.0",
+        "@material/mwc-radio": "^0.27.0",
+        "@material/mwc-ripple": "^0.27.0",
+        "@material/mwc-select": "^0.27.0",
+        "@material/mwc-slider": "^0.27.0",
+        "@material/mwc-snackbar": "^0.27.0",
+        "@material/mwc-switch": "^0.27.0",
+        "@material/mwc-tab": "^0.27.0",
+        "@material/mwc-tab-bar": "^0.27.0",
+        "@material/mwc-tab-indicator": "^0.27.0",
+        "@material/mwc-tab-scroller": "^0.27.0",
+        "@material/mwc-textarea": "^0.27.0",
+        "@material/mwc-textfield": "^0.27.0",
+        "@material/mwc-top-app-bar": "^0.27.0",
+        "@material/mwc-top-app-bar-fixed": "^0.27.0"
+    }
+}
