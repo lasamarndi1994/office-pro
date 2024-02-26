@@ -19,7 +19,7 @@
                     <!-- Divider-->
                     <div class="drawer-menu-divider d-sm-none"></div>
                     <!-- Drawer section heading (Interface)-->
-                    <div class="drawer-menu-heading">Interface</div>
+                    <div class="mb-3"></div>
                     <!-- Drawer link (Overview)-->
 
                     <!-- Drawer link (Dashboards)-->
@@ -30,16 +30,20 @@
 
                     <!-- Drawer link (Layouts)-->
                     <Link class="nav-link" href="/employees" :class="currentPath('/employees')">
-                    <div class="nav-link-icon"><i class="material-icons">view_compact</i></div>
+                    <div class="nav-link-icon"><i class="material-icons">
+                            account_circle
+                        </i></div>
                     Employee
                     </Link>
 
                     <!-- Drawer link (Pages)-->
                     <a class="nav-link "
-                        :class="showCollapse(['/online-attendance', '/attendance-regularization', '/attendance/reports', '/time-sheet-entry']) == 'show' ? '' : 'collapsed show'"
+                        :class="showCollapse(['/online-attendance', '/attendance-regularization', '/attendance/reports', '/time-sheet-entry']) == 'show' ? 'active' : 'collapsed show '"
                         href="javascript:void(0);" data-bs-toggle="collapse" data-bs-target="#attendanceLayouts"
                         aria-expanded="false" aria-controls="attendanceLayouts">
-                        <div class="nav-link-icon"><i class="material-icons">view_compact</i></div>
+                        <div class="nav-link-icon"><i class="material-icons">
+                                watch_later
+                            </i></div>
                         Attendance
                         <div class="drawer-collapse-arrow"><i class="material-icons">expand_more</i></div>
                     </a>
@@ -61,24 +65,35 @@
                     </div>
                     <!-- Nested drawer nav (Pages)-->
 
-                    <a class="nav-link collapsed" href="javascript:void(0);" data-bs-toggle="collapse"
+                    <a class="nav-link" href="javascript:void(0);" data-bs-toggle="collapse"
+                        :class="showCollapse(['/leave-application', '/apply-leave', '/attendance/reports', '/leave-balance-report']) == 'show' ? 'active' : 'collapsed show '"
                         data-bs-target="#leaveLayouts" aria-expanded="false" aria-controls="leaveLayouts">
-                        <div class="nav-link-icon"><i class="material-icons">view_compact</i></div>
+                        <div class="nav-link-icon"><i class="material-icons">
+                                library_add_check
+                            </i></div>
                         Leave
                         <div class="drawer-collapse-arrow"><i class="material-icons">expand_more</i></div>
                     </a>
                     <!-- Nested drawer nav (Layouts)-->
-                    <div class="collapse" id="leaveLayouts" aria-labelledby="headingOne" data-bs-parent="#drawerAccordion">
+                    <div class="collapse"
+                        :class="showCollapse(['/leave-application', '/apply-leave', '/attendance/reports', '/leave-balance-report'])"
+                        id="leaveLayouts" aria-labelledby="headingOne" data-bs-parent="#drawerAccordion">
                         <nav class="drawer-menu-nested nav">
-                            <a class="nav-link" href="layout-dark.html">Dark Theme</a>
-                            <a class="nav-link" href="layout-light.html">Light Theme</a>
-                            <a class="nav-link" href="layout-static.html">Static Navigation</a>
+                            <Link class="nav-link" href="/leave-application" :class="currentPath('/leave-application')">
+                            Leave Application</Link>
+                            <Link class="nav-link" href="/apply-leave" :class="currentPath('/apply-leave')">Apply Leave
+                            </Link>
+                            <Link class="nav-link" href="/leave-balance-report"
+                                :class="currentPath('/leave-balance-report')">
+                            Leave Balance Report</Link>
                         </nav>
                     </div>
 
                     <a class="nav-link collapsed" href="javascript:void(0);" data-bs-toggle="collapse"
                         data-bs-target="#recuiterLayouts" aria-expanded="false" aria-controls="recuiterLayouts">
-                        <div class="nav-link-icon"><i class="material-icons">view_compact</i></div>
+                        <div class="nav-link-icon"><i class="material-icons">
+                                person_search
+                            </i></div>
                         Recuiter
                         <div class="drawer-collapse-arrow"><i class="material-icons">expand_more</i></div>
                     </a>
@@ -94,7 +109,9 @@
 
                     <a class="nav-link collapsed" href="javascript:void(0);" data-bs-toggle="collapse"
                         data-bs-target="#payrollLayouts" aria-expanded="false" aria-controls="payrollLayouts">
-                        <div class="nav-link-icon"><i class="material-icons">view_compact</i></div>
+                        <div class="nav-link-icon"><i class="material-icons">
+                                currency_rupee
+                            </i></div>
                         Payroll
                         <div class="drawer-collapse-arrow"><i class="material-icons">expand_more</i></div>
                     </a>
@@ -109,7 +126,9 @@
                     </div>
 
                     <a class="nav-link collapsed" href="javascript:void(0);" data-bs-toggle="collapse">
-                        <div class="nav-link-icon"><i class="material-icons">dashboard</i></div>
+                        <div class="nav-link-icon"><i class="material-icons">
+                                list_alt
+                            </i></div>
                         On Board
 
                     </a>
@@ -145,7 +164,6 @@ function currentPath($path) {
 }
 
 function showCollapse($path = []) {
-    console.log($path);
     if ($path.includes(path.value)) {
         return 'show';
     }

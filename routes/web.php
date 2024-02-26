@@ -21,4 +21,8 @@ Route::get("/employees", [App\Http\Controllers\EmployeeController::class, 'index
 Route::get("/online-attendance", [App\Http\Controllers\AttendanceController::class, 'onlineAttendance']);
 Route::get("/attendance-regularization", [App\Http\Controllers\AttendanceController::class, 'attendanceRegularization']);
 Route::get("/time-sheet-entry", [App\Http\Controllers\AttendanceController::class, 'timeSheetEntry']);
-Route::get("/attendance/reports", [App\Http\Controllers\AttendanceController::class, 'attendanceReport'])->name('ddd');
+Route::get("/attendance/reports", [App\Http\Controllers\AttendanceController::class, 'attendanceReport']);
+
+Route::get("/leave-application", [App\Http\Controllers\LeaveController::class, 'leaveApplication']);
+Route::get("/apply-leave", [App\Http\Controllers\LeaveController::class, 'applyLeave']);
+Route::get("/leave-balance-report", [App\Http\Controllers\LeaveController::class, 'leaveBalanceReport']);
