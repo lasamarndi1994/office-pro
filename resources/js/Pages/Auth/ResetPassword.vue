@@ -16,30 +16,22 @@
                                             <div class="text-center">
                                                 <img class="mb-3" src="../../assets/img/icons/background.svg" alt="..."
                                                     style="height: 48px" />
-                                                <h1 class="display-5 mb-0">Login</h1>
+                                                <h1 class="display-5 mb-0">Reset Password</h1>
                                                 <div class="subheading-1 mb-5">to continue to app</div>
                                             </div>
                                             <!-- Login submission form-->
                                             <form class="mb-5">
-                                                <div class="mb-4"><mwc-textfield class="w-100" label="Username"
-                                                        outlined=""></mwc-textfield></div>
-                                                <div class="mb-4"><mwc-textfield class="w-100" label="Password" outlined=""
-                                                        icontrailing="visibility_off" type="password"></mwc-textfield></div>
-                                                <div class="d-flex align-items-center">
-                                                    <mwc-formfield
-                                                        label="Remember password"><mwc-checkbox></mwc-checkbox></mwc-formfield>
+                                                <div class="mb-4">
+                                                    <mwc-textfield class="w-100" label="Username"
+                                                        outlined=""></mwc-textfield>
                                                 </div>
                                                 <div
                                                     class="form-group d-flex align-items-center justify-content-between mt-4 mb-0">
-                                                    <Link class="small fw-500 text-decoration-none" href="forgot-password">
-                                                    Forgot Password?</Link>
-                                                    <a class="btn btn-primary" href="index.html">Login</a>
+                                                    <Link class="small fw-500 text-decoration-none" href="/login">Return to
+                                                    login</Link>
+                                                    <a class="btn btn-primary" href="index.html">Submit</a>
                                                 </div>
                                             </form>
-                                            <!-- Auth card message-->
-                                            <div class="text-center"><a class="small fw-500 text-decoration-none"
-                                                    href="app-auth-register-basic.html">New User? Create an account!</a>
-                                            </div>
                                         </div>
                                     </div>
                                     <!-- Background image column using inline CSS-->
@@ -57,8 +49,3 @@
         <div id="layoutAuthentication_footer"></div>
     </div>
 </template>
-<script>
-export default {
-
-}
-</script>
