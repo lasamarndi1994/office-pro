@@ -1,12 +1,11 @@
 <template>
     <app-layout>
-        <div class="d-flex my-2">
+        <div class="d-flex justify-content-between  my-2">
             <div>
                 <h2 class="font-monospace text-expanded text-uppercase fs-6 ">Attendance</h2>
             </div>
             <div>
-                <flatpickr />
-                <!-- <Litepicker /> -->
+                <flat-pickr v-model="date" class="form-control" />
             </div>
         </div>
         <div class="card card-raised overflow-hidden mb-5">
@@ -39,10 +38,11 @@
                                 <td>{{ i + 1 }}-02-2024</td>
                                 <td>-</td>
                                 <td>-</td>
-                                <td><i class="material-icons">
-                                        edit
-                                    </i></td>
-
+                                <td>
+                                    <a href=""><i class="material-icons">
+                                            edit
+                                        </i></a>
+                                </td>
                             </tr>
                         </tbody>
                     </table>
@@ -53,7 +53,11 @@
 </template>
 
 <script setup>
-// import flatpickr from "flatpickr";
+import { ref } from 'vue';
+import flatPickr from 'vue-flatpickr-component';
+import 'flatpickr/dist/flatpickr.css';
+
+const date = ref(null);
 
 </script>
 

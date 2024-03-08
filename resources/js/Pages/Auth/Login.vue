@@ -33,7 +33,7 @@
                                                     class="form-group d-flex align-items-center justify-content-between mt-4 mb-0">
                                                     <Link class="small fw-500 text-decoration-none" href="forgot-password">
                                                     Forgot Password?</Link>
-                                                    <a class="btn btn-primary" href="index.html">Login</a>
+                                                    <a class="btn btn-primary" href="/dashboard">Login</a>
                                                 </div>
                                             </form>
                                             <!-- Auth card message-->
