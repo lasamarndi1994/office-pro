@@ -323,7 +323,6 @@
                 </div>
             </div>
         </div>
-
         <div class="d-flex justify-content-between">
             <div>
                 <h2 class="font-monospace text-expanded text-uppercase fs-6">Employees</h2>
@@ -338,7 +337,6 @@
         <div class="card card-raised overflow-hidden mt-4">
             <div class="card-body p-0">
                 <!-- Payment history table-->
-
                 <div class="table-responsive">
                     <table class="table table-striped table-hover mb-0">
                         <thead class="table-dark">
