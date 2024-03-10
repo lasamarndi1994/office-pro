@@ -143,11 +143,16 @@
                         <div class="drawer-collapse-arrow"><i class="material-icons">expand_more</i></div>
                     </a>
                     <!-- Nested drawer nav (Layouts)-->
-                    <div class="collapse" id="settings" aria-labelledby="headingOne" data-bs-parent="#drawerAccordion">
+                    <div class="collapse"
+                        :class="showCollapse(['/setting/departments', '/setting/designations', '/setting/time-sechedule'])"
+                        id="settings" aria-labelledby="headingOne" data-bs-parent="#drawerAccordion">
                         <nav class="drawer-menu-nested nav">
-                            <a class="nav-link" href="#">Departments</a>
-                            <a class="nav-link" href="#">Designation</a>
-                            <a class="nav-link" href="#">Time Schedule</a>
+                            <Link class="nav-link" :class="currentPath('/setting/departments')"
+                                href="/setting/departments">Departments</Link>
+                            <Link class="nav-link" :class="currentPath('/setting/designations')"
+                                href="/setting/designations">Designation</Link>
+                            <Link class="nav-link" :class="currentPath('/setting/time-sechedule')"
+                                href="/setting/time-sechedule">Time Schedule</Link>
                         </nav>
                     </div>
 

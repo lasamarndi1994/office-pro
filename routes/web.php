@@ -37,3 +37,4 @@ Route::get("/profile/assets", [App\Http\Controllers\UserController::class, 'asse
 //settings
 Route::get("/settings", [App\Http\Controllers\SettingController::class, 'index']);
 Route::get("/setting/departments", [App\Http\Controllers\DepartmentController::class, 'index']);
+Route::get("/setting/designations", [App\Http\Controllers\DesignationController::class, 'index']);
