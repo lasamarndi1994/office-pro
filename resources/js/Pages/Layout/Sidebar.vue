@@ -57,9 +57,11 @@
                             Attendance</Link>
                             <Link class="nav-link" href="/attendance-regularization"
                                 :class="currentPath('/attendance-regularization')">Attendance Regularization</Link>
-                            <Link class="nav-link" href="/time-sheet-entry" :class="currentPath('/time-sheet-entry')">Time
+                            <Link class="nav-link" href="/time-sheet-entry" :class="currentPath('/time-sheet-entry')">
+                            Time
                             Sheet Entry</Link>
-                            <Link class="nav-link" href="/attendance/reports" :class="currentPath('/attendance/reports')">
+                            <Link class="nav-link" href="/attendance/reports"
+                                :class="currentPath('/attendance/reports')">
                             Reports</Link>
                         </nav>
                     </div>
@@ -119,9 +121,9 @@
                     <div class="collapse" id="payrollLayouts" aria-labelledby="headingOne"
                         data-bs-parent="#drawerAccordion">
                         <nav class="drawer-menu-nested nav">
-                            <a class="nav-link" href="layout-dark.html">Dark Theme</a>
-                            <a class="nav-link" href="layout-light.html">Light Theme</a>
-                            <a class="nav-link" href="layout-static.html">Static Navigation</a>
+                            <a class="nav-link" href="#">Employee Salary</a>
+                            <a class="nav-link" href="#">Payslip</a>
+                            <a class="nav-link" href="#">Payroll item</a>
                         </nav>
                     </div>
 
@@ -130,11 +132,27 @@
                                 list_alt
                             </i></div>
                         On Board
-
                     </a>
 
-                    <!-- Divider-->
+                    <a class="nav-link collapsed" href="javascript:void(0);" data-bs-toggle="collapse"
+                        data-bs-target="#settings" aria-expanded="false" aria-controls="settings">
+                        <div class="nav-link-icon"><i class="material-icons">
+                                settings
+                            </i></div>
+                        Settings
+                        <div class="drawer-collapse-arrow"><i class="material-icons">expand_more</i></div>
+                    </a>
+                    <!-- Nested drawer nav (Layouts)-->
+                    <div class="collapse" id="settings" aria-labelledby="headingOne" data-bs-parent="#drawerAccordion">
+                        <nav class="drawer-menu-nested nav">
+                            <a class="nav-link" href="#">Departments</a>
+                            <a class="nav-link" href="#">Designation</a>
+                            <a class="nav-link" href="#">Time Schedule</a>
+                        </nav>
+                    </div>
 
+
+                    <!-- Divider-->
                 </div>
             </div>
             <!-- Drawer footer        -->

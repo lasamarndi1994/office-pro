@@ -35,8 +35,10 @@
                                 <a class="dropdown-item unread" href="#!">
                                     <div class="dropdown-item-content">
                                         <div class="dropdown-item-content-text">
-                                            <div class="text-truncate d-inline-block" style="max-width: 18rem">Hi there, I
-                                                had a question about something, is there any way you can help me out?</div>
+                                            <div class="text-truncate d-inline-block" style="max-width: 18rem">Hi there,
+                                                I
+                                                had a question about something, is there any way you can help me out?
+                                            </div>
                                         </div>
                                         <div class="dropdown-item-content-subtext">Mar 12, 2023 · Juan Babin</div>
                                     </div>
@@ -49,11 +51,14 @@
                                 <a class="dropdown-item" href="#!">
                                     <div class="dropdown-item-content">
                                         <div class="dropdown-item-content-text">
-                                            <div class="text-truncate d-inline-block" style="max-width: 18rem">Thanks for
-                                                the assistance the other day, I wanted to follow up with you just to make
+                                            <div class="text-truncate d-inline-block" style="max-width: 18rem">Thanks
+                                                for
+                                                the assistance the other day, I wanted to follow up with you just to
+                                                make
                                                 sure everyting is settled.</div>
                                         </div>
-                                        <div class="dropdown-item-content-subtext">Mar 10, 2023 · Christine Hendersen</div>
+                                        <div class="dropdown-item-content-subtext">Mar 10, 2023 · Christine Hendersen
+                                        </div>
                                     </div>
                                 </a>
                             </li>
@@ -64,8 +69,10 @@
                                 <a class="dropdown-item" href="#!">
                                     <div class="dropdown-item-content">
                                         <div class="dropdown-item-content-text">
-                                            <div class="text-truncate d-inline-block" style="max-width: 18rem">Welcome to
-                                                our group! It's good to see new members and I know you will do great!</div>
+                                            <div class="text-truncate d-inline-block" style="max-width: 18rem">Welcome
+                                                to
+                                                our group! It's good to see new members and I know you will do great!
+                                            </div>
                                         </div>
                                         <div class="dropdown-item-content-subtext">Mar 8, 2023 · Celia J. Knight</div>
                                     </div>
@@ -101,7 +108,8 @@
                                 <a class="dropdown-item unread" href="#!">
                                     <i class="material-icons leading-icon">assessment</i>
                                     <div class="dropdown-item-content me-2">
-                                        <div class="dropdown-item-content-text">Your March performance report is ready to
+                                        <div class="dropdown-item-content-text">Your March performance report is ready
+                                            to
                                             view.</div>
                                         <div class="dropdown-item-content-subtext">Mar 12, 2023 · Performance</div>
                                     </div>
@@ -114,7 +122,8 @@
                                 <a class="dropdown-item" href="#!">
                                     <i class="material-icons leading-icon">check_circle</i>
                                     <div class="dropdown-item-content me-2">
-                                        <div class="dropdown-item-content-text">Tracking codes successfully updated.</div>
+                                        <div class="dropdown-item-content-text">Tracking codes successfully updated.
+                                        </div>
                                         <div class="dropdown-item-content-subtext">Mar 12, 2023 · Coverage</div>
                                     </div>
                                 </a>
@@ -148,19 +157,20 @@
                     <!-- User profile dropdown-->
                     <div class="dropdown">
                         <button class="btn btn-lg btn-icon dropdown-toggle" id="dropdownMenuProfile" type="button"
-                            data-bs-toggle="dropdown" aria-expanded="false"><i class="material-icons">person</i></button>
+                            data-bs-toggle="dropdown" aria-expanded="false"><i
+                                class="material-icons">person</i></button>
                         <ul class="dropdown-menu dropdown-menu-end mt-3" aria-labelledby="dropdownMenuProfile">
                             <li>
-                                <a class="dropdown-item" href="#!">
-                                    <i class="material-icons leading-icon">person</i>
-                                    <div class="me-3">Profile</div>
-                                </a>
+                                <Link class="dropdown-item" href="/my-profile">
+                                <i class="material-icons leading-icon">person</i>
+                                <div class="me-3">Profile</div>
+                                </Link>
                             </li>
                             <li>
-                                <a class="dropdown-item" href="#!">
-                                    <i class="material-icons leading-icon">settings</i>
-                                    <div class="me-3">Settings</div>
-                                </a>
+                                <Link class="dropdown-item" href="/settings">
+                                <i class="material-icons leading-icon">settings</i>
+                                <div class="me-3">Settings</div>
+                                </Link>
                             </li>
                             <li>
                                 <a class="dropdown-item" href="#!">

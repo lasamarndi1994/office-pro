@@ -17,4 +17,11 @@ class UserController extends Controller
         return Inertia::render('User/EduacationPage', [
         ]);
     }
+
+    public function assets()
+    {
+        return Inertia::render('User/AssetPage', [
+
+        ]);
+    }
 }

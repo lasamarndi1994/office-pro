@@ -829,7 +829,7 @@
                                                 <div class="employee-notification-icon">
                                                     <a href="activities.html">
                                                         <span class="rounded-circle">
-                                                            <img src="../assets/img/avatar/avatar-2.jpg"
+                                                            <img src="https://smarthr.dreamstechnologies.com/html/template/assets/img/avatar/avatar-1.jpg"
                                                                 class="img-fluid rounded-circle" alt="User">
                                                         </span>
                                                     </a>

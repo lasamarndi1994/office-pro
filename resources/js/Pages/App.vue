@@ -1,4 +1,3 @@
-
 <template>
     <!-- Top app bar navigation menu-->
     <Header />
@@ -7,9 +6,12 @@
         <!-- Layout navigation-->
         <SideBar />
         <!-- Layout content-->
+
         <div id="layoutDrawer_content">
+
             <!-- Main page content-->
             <main>
+
                 <!-- Page header-->
 
                 <div class="container-xl p-5">
@@ -18,7 +20,7 @@
             </main>
             <!-- Footer-->
             <!-- Min-height is set inline to match the height of the drawer footer-->
-           
+
         </div>
     </div>
     <!-- Load Bootstrap JS bundle-->

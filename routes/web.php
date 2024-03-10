@@ -32,3 +32,8 @@ Route::get("/leave-balance-report", [App\Http\Controllers\LeaveController::class
 
 Route::get("/my-profile", [App\Http\Controllers\UserController::class, 'profile'])->name('profile');
 Route::get("/profile/educations", [App\Http\Controllers\UserController::class, 'education'])->name('education');
+Route::get("/profile/assets", [App\Http\Controllers\UserController::class, 'assets'])->name('assets');
+
+//settings
+Route::get("/settings", [App\Http\Controllers\SettingController::class, 'index']);
+Route::get("/setting/departments", [App\Http\Controllers\DepartmentController::class, 'index']);
