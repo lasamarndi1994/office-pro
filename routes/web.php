@@ -14,6 +14,8 @@ use Illuminate\Support\Facades\Route;
  */
 
 Route::get("/login", [App\Http\Controllers\AuthController::class, 'login'])->name('login');
+Route::post("/login", [App\Http\Controllers\AuthController::class, 'authenticate']);
+
 Route::get("/forgot-password", [App\Http\Controllers\AuthController::class, 'forgotPassword'])->name('login');
 
 Route::get("/dashboard", [App\Http\Controllers\HomeController::class, 'index']);
@@ -27,3 +29,6 @@ Route::get("/attendance/reports", [App\Http\Controllers\AttendanceController::cl
 Route::get("/leave-application", [App\Http\Controllers\LeaveController::class, 'leaveApplication']);
 Route::get("/apply-leave", [App\Http\Controllers\LeaveController::class, 'applyLeave']);
 Route::get("/leave-balance-report", [App\Http\Controllers\LeaveController::class, 'leaveBalanceReport']);
+
+Route::get("/my-profile", [App\Http\Controllers\UserController::class, 'profile'])->name('profile');
+Route::get("/profile/educations", [App\Http\Controllers\UserController::class, 'education'])->name('education');

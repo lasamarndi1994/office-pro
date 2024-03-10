@@ -18,7 +18,7 @@
                                     </div>
                                 </div>
                                 <div class="welcome-btn">
-                                    <a href="profile.html" class="btn">View Profile</a>
+                                    <Link href="/my-profile" class="btn btn-secondary">View Profile</Link>
                                 </div>
                             </div>
                         </div>
@@ -766,7 +766,7 @@
                                                 <div class="employee-notification-icon">
                                                     <a href="activities.html">
                                                         <span class="rounded-circle">
-                                                            <img src="../assets/img/avatar/avatar-1.jpg"
+                                                            <img src="https://smarthr.dreamstechnologies.com/html/template/assets/img/avatar/avatar-1.jpg"
                                                                 class="img-fluid rounded-circle" alt="User">
                                                         </span>
                                                     </a>
@@ -984,11 +984,66 @@
                                     </div>
                                 </div>
                                 <div class="col-sm-4 text-sm-end">
-                                    <div class="owl-nav company-nav nav-control"><button type="button"
-                                            role="presentation" class="owl-prev" fdprocessedid="wjb35"><i
-                                                class="fa-solid fa-chevron-left"></i></button><button type="button"
-                                            role="presentation" class="owl-next" fdprocessedid="cm1hk4"><i
-                                                class="fa-solid fa-chevron-right"></i></button></div>
+                                    <div class="owl-nav company-nav nav-control">
+                                        <button type="button" role="presentation" class="owl-prev">
+                                            <span class="material-icons">
+                                                chevron_left
+                                            </span>
+                                        </button>
+                                        <button type="button" role="presentation" class="owl-next">
+                                            <span class="material-icons">
+                                                navigate_next
+                                            </span>
+                                        </button>
+                                    </div>
+                                </div>
+                                <div class="d-flex">
+                                    <div class="owl-item active" style="width: 201.333px; margin-right: 20px;">
+                                        <div class="company-grid company-soft-tertiary">
+                                            <div class="company-top">
+                                                <div class="company-icon">
+                                                    <span class="company-icon-tertiary rounded-circle">HR</span>
+                                                </div>
+                                                <div class="company-link">
+                                                    <a href="companies.html">HR Policy</a>
+                                                </div>
+                                            </div>
+                                            <div class="company-bottom d-flex">
+                                                <ul>
+                                                    <li>Policy Name : Work policy</li>
+                                                    <li>Updated on : Today</li>
+                                                </ul>
+                                                <div class="company-bottom-links">
+                                                    <a href="#"><i class="la la-download"></i></a>
+                                                    <a href="#"><i class="la la-eye"></i></a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+
+                                    <div class="owl-item active" style="width: 201.333px; margin-right: 20px;">
+                                        <div class="company-grid company-soft-success">
+                                            <div class="company-top">
+                                                <div class="company-icon">
+                                                    <span class="company-icon-success rounded-circle">EP</span>
+                                                </div>
+                                                <div class="company-link">
+                                                    <a href="companies.html">Employer Policy</a>
+                                                </div>
+                                            </div>
+                                            <div class="company-bottom d-flex">
+                                                <ul>
+                                                    <li>Policy Name : Parking</li>
+                                                    <li>Updated on : 25 Jan 2024</li>
+                                                </ul>
+                                                <div class="company-bottom-links">
+                                                    <a href="#"><i class="la la-download"></i></a>
+                                                    <a href="#"><i class="la la-eye"></i></a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
 

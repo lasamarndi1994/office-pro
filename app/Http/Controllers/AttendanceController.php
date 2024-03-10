@@ -6,6 +6,7 @@ use Inertia\Inertia;
 
 class AttendanceController extends Controller
 {
+
     public function onlineAttendance()
     {
         return Inertia::render('Attendance/OnlineAttendance', [

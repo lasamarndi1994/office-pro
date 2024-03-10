@@ -20,20 +20,37 @@
                                                 <div class="subheading-1 mb-5">to continue to app</div>
                                             </div>
                                             <!-- Login submission form-->
-                                            <form class="mb-5">
-                                                <div class="mb-4"><mwc-textfield class="w-100" label="Username"
-                                                        outlined=""></mwc-textfield></div>
-                                                <div class="mb-4"><mwc-textfield class="w-100" label="Password" outlined=""
-                                                        icontrailing="visibility_off" type="password"></mwc-textfield></div>
+                                            <form class="mb-5" @submit.prevent="form.post('/login')">
+                                                <div class="mb-4">
+                                                    <mwc-textfield class="w-100" label="Username" outlined="">
+                                                    </mwc-textfield>
+                                                    <span v-if="form.errors.username" class="text-danger">{{
+                                                form.errors.username }}</span>
+
+                                                </div>
+                                                <div class="mb-4">
+                                                    <mwc-textfield class="w-100" label="Password" outlined=""
+                                                        icontrailing="visibility_off" type="password">
+                                                    </mwc-textfield>
+                                                    <span v-if="form.errors.password" class="text-danger">{{
+                                                form.errors.password }}</span>
+                                                </div>
                                                 <div class="d-flex align-items-center">
-                                                    <mwc-formfield
-                                                        label="Remember password"><mwc-checkbox></mwc-checkbox></mwc-formfield>
+                                                    <mwc-formfield label="Remember password">
+                                                        <mwc-checkbox>
+                                                        </mwc-checkbox>
+                                                    </mwc-formfield>
                                                 </div>
                                                 <div
                                                     class="form-group d-flex align-items-center justify-content-between mt-4 mb-0">
-                                                    <Link class="small fw-500 text-decoration-none" href="forgot-password">
+                                                    <Link class="small fw-500 text-decoration-none"
+                                                        href="forgot-password">
                                                     Forgot Password?</Link>
-                                                    <a class="btn btn-primary" href="/dashboard">Login</a>
+
+                                                    <button class="btn btn-primary" type="submit"
+                                                        :disabled="form.processing">
+
+                                                        Login</button>
                                                 </div>
                                             </form>
                                             <!-- Auth card message-->
@@ -57,8 +74,20 @@
         <div id="layoutAuthentication_footer"></div>
     </div>
 </template>
-<script>
-export default {
+<script setup>
+import "@material/mwc-formfield";
+import { useForm } from '@inertiajs/vue3'
+import { router } from '@inertiajs/vue3';
 
+const form = useForm({
+    username: null,
+    password: null,
+    remember: false,
+})
+
+function submit() {
+    router.post('/api/login', form).then((response) => {
+        console.log(response.data)
+    });
 }
 </script>
