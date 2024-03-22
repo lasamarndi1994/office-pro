@@ -127,12 +127,14 @@
                         </nav>
                     </div>
 
-                    <a class="nav-link collapsed" href="javascript:void(0);" data-bs-toggle="collapse">
-                        <div class="nav-link-icon"><i class="material-icons">
-                                list_alt
-                            </i></div>
-                        On Board
-                    </a>
+                    <Link class="nav-link collapsed" href="/onboard" :class="currentPath('/onboard')">
+                    <div class="nav-link-icon">
+                        <i class="material-icons">
+                            list_alt
+                        </i>
+                    </div>
+                    On Board
+                    </Link>
 
                     <a class="nav-link collapsed" href="javascript:void(0);" data-bs-toggle="collapse"
                         data-bs-target="#settings" aria-expanded="false" aria-controls="settings">
@@ -155,6 +157,24 @@
                                 href="/setting/time-sechedule">Time Schedule</Link>
                         </nav>
                     </div>
+
+                    <Link class="nav-link collapsed" href="/contacts" :class="currentPath('/contacts')">
+                    <div class="nav-link-icon">
+                        <i class="material-icons">
+                            contact_phone
+                        </i>
+                    </div>
+                    Contacts
+                    </Link>
+
+                    <Link class="nav-link collapsed" href="/contacts" :class="currentPath('/contacts')">
+                    <div class="nav-link-icon">
+                        <i class="material-icons">
+                            account_balance
+                        </i>
+                    </div>
+                    Accounts
+                    </Link>
 
 
                     <!-- Divider-->
@@ -180,6 +200,7 @@ import { usePage } from '@inertiajs/vue3'
 const page = usePage()
 const path = computed(() => page.props.current_path)
 
+//current path 
 function currentPath($path) {
     if ($path == path.value) {
         return 'active';

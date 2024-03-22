@@ -38,3 +38,9 @@ Route::get("/profile/assets", [App\Http\Controllers\UserController::class, 'asse
 Route::get("/settings", [App\Http\Controllers\SettingController::class, 'index']);
 Route::get("/setting/departments", [App\Http\Controllers\DepartmentController::class, 'index']);
 Route::get("/setting/designations", [App\Http\Controllers\DesignationController::class, 'index']);
+
+Route::get("/onboard", [App\Http\Controllers\OnboardController::class, 'index']);
+
+Route::get("/contacts", [App\Http\Controllers\ContactController::class, 'index']);
+
+Route::inertia('/test', 'TestPage');
