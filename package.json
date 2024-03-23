@@ -13,6 +13,7 @@
         "vite": "^5.0.0"
     },
     "dependencies": {
+        "@inertiajs/progress": "^0.2.7",
         "@inertiajs/vue3": "^1.0.14",
         "@material/mwc-base": "^0.27.0",
         "@material/mwc-button": "^0.27.0",
@@ -53,6 +54,7 @@
         "flatpickr": "^4.6.13",
         "litepicker": "^2.0.12",
         "material-icons": "^1.13.12",
-        "vue-flatpickr-component": "^11.0.4"
+        "vue-flatpickr-component": "^11.0.4",
+        "vue3-toastify": "^0.2.1"
     }
 }

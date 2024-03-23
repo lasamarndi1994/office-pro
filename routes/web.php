@@ -18,7 +18,7 @@ Route::post("/login", [App\Http\Controllers\AuthController::class, 'authenticate
 
 Route::get("/forgot-password", [App\Http\Controllers\AuthController::class, 'forgotPassword'])->name('login');
 
-Route::get("/dashboard", [App\Http\Controllers\HomeController::class, 'index']);
+Route::get("/dashboard", [App\Http\Controllers\HomeController::class, 'index'])->name("dashboard");
 Route::get("/employees", [App\Http\Controllers\EmployeeController::class, 'index']);
 
 Route::get("/online-attendance", [App\Http\Controllers\AttendanceController::class, 'onlineAttendance']);
@@ -38,6 +38,8 @@ Route::get("/profile/assets", [App\Http\Controllers\UserController::class, 'asse
 Route::get("/settings", [App\Http\Controllers\SettingController::class, 'index']);
 Route::get("/setting/departments", [App\Http\Controllers\DepartmentController::class, 'index']);
 Route::get("/setting/designations", [App\Http\Controllers\DesignationController::class, 'index']);
+
+Route::post("/setting/designation", [App\Http\Controllers\DesignationController::class, 'store']);
 
 Route::get("/onboard", [App\Http\Controllers\OnboardController::class, 'index']);
 

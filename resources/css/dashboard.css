@@ -19391,7 +19391,7 @@ textarea.form-control {
 .info-card::before {
     position: absolute;
     content: "";
-    background: url(../img/bg/card-bg.png);
+    /* background: url(../img/bg/card-bg.png); */
     background-repeat: no-repeat;
     background-size: cover;
     width: 100%;

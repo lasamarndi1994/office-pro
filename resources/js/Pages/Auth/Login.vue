@@ -20,24 +20,24 @@
                                                 <div class="subheading-1 mb-5">to continue to app</div>
                                             </div>
                                             <!-- Login submission form-->
-                                            <form class="mb-5" @submit.prevent="form.post('/login')">
+                                            <form class="mb-5" @submit.prevent="form.post('/login')" id="form">
                                                 <div class="mb-4">
-                                                    <mwc-textfield class="w-100" label="Username" outlined="">
-                                                    </mwc-textfield>
-                                                    <span v-if="form.errors.username" class="text-danger">{{
-                                                form.errors.username }}</span>
+                                                    <mwc-textfield class="w-100" label="Email *" outlined="" id="email"
+                                                        </mwc-textfield>
+                                                        <span v-if="form.errors.email" class="text-danger">{{
+                                                form.errors.email }}</span>
 
                                                 </div>
                                                 <div class="mb-4">
                                                     <mwc-textfield class="w-100" label="Password" outlined=""
-                                                        icontrailing="visibility_off" type="password">
+                                                        id="password" icontrailing="visibility_off" type="password">
                                                     </mwc-textfield>
                                                     <span v-if="form.errors.password" class="text-danger">{{
                                                 form.errors.password }}</span>
                                                 </div>
                                                 <div class="d-flex align-items-center">
                                                     <mwc-formfield label="Remember password">
-                                                        <mwc-checkbox>
+                                                        <mwc-checkbox id="remember">
                                                         </mwc-checkbox>
                                                     </mwc-formfield>
                                                 </div>
@@ -76,18 +76,45 @@
 </template>
 <script setup>
 import "@material/mwc-formfield";
+import { inject, onMounted } from "vue";
 import { useForm } from '@inertiajs/vue3'
-import { router } from '@inertiajs/vue3';
 
+const toast = inject("toast");
 const form = useForm({
-    username: null,
+    email: null,
     password: null,
     remember: false,
 })
 
-function submit() {
-    router.post('/api/login', form).then((response) => {
-        console.log(response.data)
+onMounted(() => {
+    window.email.addEventListener('change', function (event) {
+        form.email = event.target.value;
     });
+
+    window.password.addEventListener('change', function (event) {
+        form.password = event.target.value;
+    });
+
+    window.remember.addEventListener('change', function (event) {
+        form.remember = event.target.value;
+    });
+})
+
+const clearForm = () => {
+    form.reset({
+        email: null,
+        password: null,
+        remember: false
+    })
+}
+
+function submit() {
+    form.post('/profile', {
+        preserveScroll: true,
+        onSuccess: () => {
+            clearForm();
+        }
+
+    })
 }
 </script>

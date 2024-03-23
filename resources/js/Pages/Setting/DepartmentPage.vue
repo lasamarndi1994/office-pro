@@ -83,15 +83,21 @@
     </app-layout>
 </template>
 <script setup>
-import { reactive, onMounted, ref } from 'vue'
+import { onMounted, ref, inject } from 'vue'
+import { useForm } from '@inertiajs/vue3'
+
+
+const toast = inject("toast")
+
+
 const isModalOpened = ref(false);
 const deleteModalId = ref(null);
-const formData = reactive({
+const form = useForm({
     "department_name": ""
 })
 onMounted(() => {
     window.department_name.addEventListener('change', function (event) {
-        formData.department_name = event.target.value;
+        form.department_name = event.target.value;
     });
 })
 function closeModal() {
@@ -116,12 +122,13 @@ const onDeleteModal = () => {
 
 
 function store() {
-    //injectFunction.testFunction();
-    clearFiled();
+    form.post('/setting/designation', {
+        preserveScroll: true,
+        onSuccess: () => {
+            toast("Hello");
+        },
+    })
 }
-
-
-
 </script>
 <style scoped>
 .table th,

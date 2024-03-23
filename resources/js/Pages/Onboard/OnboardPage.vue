@@ -134,7 +134,7 @@
                         <div class="col-md-4 col-lg-6 col-xxl-4 mb-4 mb-md-0 mb-lg-4 mb-xxl-0">
                             <div class="card card-quick-link card-raised ripple-gray mdc-ripple-upgraded">
                                 <div class="card-body">
-                                    <img class="card-quick-link-img" src="../assets/img/icons/background.svg">
+                                    <!-- <img class="card-quick-link-img" src="../assets/img/icons/background.svg"> -->
                                     <div class="card-title text-truncate mb-2">Material Design Fundamentals</div>
                                     <p class="card-text">Fundamentals surrounding the material design language</p>
                                 </div>
@@ -148,7 +148,7 @@
                         <div class="col-md-4 col-lg-6 col-xxl-4 mb-4 mb-md-0 mb-lg-4 mb-xxl-0">
                             <div class="card card-quick-link card-raised ripple-gray mdc-ripple-upgraded">
                                 <div class="card-body">
-                                    <img class="card-quick-link-img" src="../assets/img/icons/cards.svg">
+                                    <!-- <img class="card-quick-link-img" src="../assets/img/icons/cards.svg"> -->
                                     <div class="card-title text-truncate mb-2">Structure &amp; Sound</div>
                                     <p class="card-text">Instructions for using sound within your UI</p>
                                 </div>
@@ -162,7 +162,7 @@
                         <div class="col-md-4 col-lg-6 col-xxl-4">
                             <div class="card card-quick-link card-raised ripple-gray mdc-ripple-upgraded">
                                 <div class="card-body">
-                                    <img class="card-quick-link-img" src="../assets/img/icons/icons.svg">
+                                    <!-- <img class="card-quick-link-img" src="../assets/img/icons/icons.svg"> -->
                                     <div class="card-title text-truncate mb-2">Targeting</div>
                                     <p class="card-text">How to target the perfect demographic for your app</p>
                                 </div>
