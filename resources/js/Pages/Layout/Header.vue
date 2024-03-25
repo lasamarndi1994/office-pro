@@ -2,7 +2,7 @@
     <nav class="top-app-bar navbar navbar-expand navbar-dark bg-dark">
         <div class="container-fluid px-4">
             <!-- Drawer toggle button-->
-            <button class="btn btn-lg btn-icon order-1 order-lg-0" id="drawerToggle" href="javascript:void(0);"><i
+            <button class="btn btn-lg btn-icon order-1 order-lg-0" id="drawerToggle"><i
                     class="material-icons">menu</i></button>
             <!-- Navbar brand-->
             <a class="navbar-brand me-auto" href="index.html">
@@ -182,7 +182,7 @@
                                 <hr class="dropdown-divider" />
                             </li>
                             <li>
-                                <a class="dropdown-item" href="#!">
+                                <a class="dropdown-item" href="#!" @click="logout()">
                                     <i class="material-icons leading-icon">logout</i>
                                     <div class="me-3">Logout</div>
                                 </a>
@@ -196,5 +196,29 @@
 </template>
 
 <script setup>
+import { router } from '@inertiajs/vue3'
+import { onMounted } from 'vue'
+onMounted(() => {
+    document.body.querySelector('#drawerToggle');
+    if (drawerToggle) {
+        drawerToggle.addEventListener('click', event => {
+            event.preventDefault();
+            document.body.classList.toggle('drawer-toggled');
+        });
+    }
+})
+
+
+
+const logout = () => {
+    router.post('/logout', {
+        preserveScroll: true,
+        onSuccess: () => {
+            alert();
+        },
+    })
+}
+
+
 
 </script>

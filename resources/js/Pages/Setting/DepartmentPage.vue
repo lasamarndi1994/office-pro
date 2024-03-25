@@ -1,42 +1,45 @@
 <template>
     <app-layout>
-        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="departmentModalLabel"
-            aria-hidden="true">
-            <div class="modal-dialog modal-md  modal-dialog-centered">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h5 class="modal-title" id="departmentModalLabel">Add Department</h5>
-                        <button class="btn-close" type="button" data-bs-dismiss="modal" aria-label="Close"></button>
-                    </div>
-                    <form @submit.prevent="store()" id="form">
-                        <div class="modal-body mt-2">
-                            <div class="row">
-                                <div class="col-sm-12">
-                                    <div class="input-block mb-3">
-                                        <div>
-                                            <mwc-textfield class="w-100" label="Department Name *" outlined
-                                                id="department_name"></mwc-textfield>
-                                        </div>
+        <v-modal :size="'modal-md'" :isOpenModal="isOpenModal" @vue-modal-close="closeModal">
+            <template #title>
+                {{ modalTitle }}
+            </template>
+            <template #body>
+                <form @submit.prevent="stote" id="form">
+                    <div class="modal-body mt-2">
+                        <div class="row">
+                            <div class="col-sm-12">
+                                <div class="input-block mb-3">
+                                    <div>
+
+                                        <mwc-textfield class="w-100" label="Department Name *" outlined
+                                            :value="form.name" id="department_name" type="text">
+                                        </mwc-textfield>
+                                        <small v-if="form.errors.name" class="text-danger text-small">{{
+            form.errors.name }}</small>
+
+
+
                                     </div>
                                 </div>
                             </div>
                         </div>
-                        <div class="modal-footer">
-                            <button class="btn btn-text-primary me-2 p-2" type="button" data-bs-dismiss="modal"
-                                @click="clearFiled">Close</button>
-                            <button class="btn btn-text-primary me-2 p-2" type="submit">Save changes</button>
-                        </div>
-                    </form>
-                </div>
-            </div>
-        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button class="btn btn-text-primary me-2 p-2" type="button" @click="closeModal">Close</button>
+                        <button class="btn btn-text-primary me-2 p-2" type="submit">Save
+                            changes</button>
+                    </div>
+                </form>
+
+            </template>
+        </v-modal>
         <div class="d-flex justify-content-between">
             <div>
                 <h2 class="font-monospace text-expanded text-uppercase fs-6">Departmets</h2>
             </div>
             <div>
-                <button class="btn btn-dark" data-bs-toggle="modal" data-bs-target="#exampleModal" type="button"><i
-                        class="material-icons">
+                <button class="btn btn-dark" @click="openModal()" type="button"><i class="material-icons">
                         add
                     </i>Add Department</button>
             </div>
@@ -49,24 +52,24 @@
                         <thead class="table-dark">
                             <tr>
                                 <th scope="col">Name</th>
-                                <th scope="">Status</th>
-                                <th scope="">Action</th>
+                                <th scope="col">Status</th>
+                                <th scope="col">Action</th>
                             </tr>
                         </thead>
                         <tbody>
-                            <tr v-for="i in 5">
-                                <td>Bernardo Galaviz</td>
-                                <td><span :class="[i % 2 == 0 ? 'badge bg-secondary' : 'badge bg-primary']">Web
+                            <tr v-for="(department, index) in departments" :key="index">
+                                <td>{{ department.name }}</td>
+                                <td><span :class="[department.status == 1 ? 'badge bg-primary' : 'badge bg-danger']">Web
                                         Active</span></td>
                                 <td>
                                     <button type="button" class="btn btn-sm btn-outline-primary me-2"
-                                        data-bs-toggle="modal" data-bs-target="#exampleModal">
+                                        @click="openModal(department)">
                                         <span class="material-icons">
                                             edit
                                         </span>
                                     </button>
                                     <button type="button" class="btn btn-sm btn-outline-primary"
-                                        @click="handleDelete()">
+                                        @click="handleDelete(department.id, index)">
                                         <span class="material-icons text-danger">
                                             delete
                                         </span>
@@ -75,59 +78,94 @@
                             </tr>
                         </tbody>
                     </table>
-                    <Vue3DialogConfirm :isOpen="isModalOpened" @modal-close="closeModal" @delete-modal="onDeleteModal">
-                    </Vue3DialogConfirm>
+
                 </div>
+                <Vue3DialogConfirm :isOpen="isConfirmOpen" @modal-close="deleteConfirm">
+                </Vue3DialogConfirm>
             </div>
         </div>
     </app-layout>
 </template>
 <script setup>
-import { onMounted, ref, inject } from 'vue'
+import { onMounted, ref, inject, reactive, computed } from 'vue'
 import { useForm } from '@inertiajs/vue3'
 
-
-const toast = inject("toast")
-
-
-const isModalOpened = ref(false);
-const deleteModalId = ref(null);
-const form = useForm({
-    "department_name": ""
+const props = defineProps({
+    departments: Object
 })
+const toast = inject("toast");
+const isOpenModal = ref(false);
+const isConfirmOpen = ref(false);
+const deleteObj = reactive({
+    "index": "",
+    "id": "",
+});
+
+const form = useForm({
+    "id": "",
+    "name": " ",
+    "status": "",
+})
+
 onMounted(() => {
     window.department_name.addEventListener('change', function (event) {
-        form.department_name = event.target.value;
-    });
-})
-function closeModal() {
-    isModalOpened.value = false;
-}
-const clearFiled = (() => {
-    window.form.querySelectorAll('mwc-textfield').forEach(textfield => {
-        document.getElementById(textfield.id).value = "";
+        form.name = event.target.value;
     });
 })
 
-function handleDelete(id) {
-    isModalOpened.value = true;
-    deleteModalId.value = id;
-
+const handleDelete = (data, index) => {
+    deleteObj.id = data.id;
+    deleteObj.index = index;
+    isConfirmOpen.value = true;
 }
 
-const onDeleteModal = () => {
-    isModalOpened.value = false;
-    console.log(deleteModalId.value);
+const deleteConfirm = (confirm) => {
+    if (confirm) {
+        form.delete(`/setting/departments/${deleteObj.id}`, {
+            onSuccess: (res) => {
+                props.departments.splice(deleteObj.index, 1);
+                toast(res.props.response.message);
+            }
+        })
+    }
+    isConfirmOpen.value = false;
 }
 
+const modalTitle = computed(() => {
+    return form.id ? "Edit Department" : "Add Department";
+})
 
-function store() {
-    form.post('/setting/designation', {
+const stote = () => {
+    console.log(form);
+    let url = "";
+    let method = "";
+    if (form.id == '') {
+        method = "post";
+        url = "/setting/departments";
+    } else {
+        method = "put";
+        url = `/setting/departments/${form.id}`;
+    }
+    form.submit(method, url, {
         preserveScroll: true,
-        onSuccess: () => {
-            toast("Hello");
+        onSuccess: (data) => {
+            toast(data.props.response.message);
+            closeModal();
         },
     })
+}
+
+const openModal = (data) => {
+    if (data) {
+        Object.assign(form, data)
+    }
+    isOpenModal.value = true;
+}
+
+const closeModal = () => {
+    isOpenModal.value = false;
+    form.reset();
+    form.clearErrors();
 }
 </script>
 <style scoped>

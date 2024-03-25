@@ -10,7 +10,7 @@ import test from './test';
 
 import AppLayout from "./Pages/App.vue";
 import Vue3DialogConfirm from "./components/Vue3ConfirmDialog.vue";
-
+import VModal from "./components/VueModal.vue";
 createInertiaApp({
   resolve: name => {
     const pages = import.meta.glob('./Pages/**/*.vue', { eager: true })
@@ -19,7 +19,7 @@ createInertiaApp({
   setup({ el, App, props, plugin }) {
 
     const app = createApp({ render: () => h(App, props) })
-    app.mixin({ components: { AppLayout, Link, Vue3DialogConfirm } })
+    app.mixin({ components: { AppLayout, Link, Vue3DialogConfirm, VModal } })
 
     app.use(plugin)
     app.provide('toast', $toast);

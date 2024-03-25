@@ -10,7 +10,7 @@
                         <h4 v-if="dialog.title" class="vc-title" v-html="dialog.title"></h4>
                         <p v-if="dialog.message" class="vc-text" v-html="dialog.message"></p>
                         <span v-if="dialog.auth">
-                            <input v-model="password" @keyup.13="e => handleClickButton()" class="vc-input"
+                            <input v-model="password" @keyup.13="e => handleClickButton(e, true)" class="vc-input"
                                 type="password" name="vc-password" placeholder="Password" autocomplete="off" />
                         </span>
                     </span>
@@ -21,7 +21,7 @@
                         </button>
 
                         <button v-if="dialog.button.yes" :disabled="dialog.auth ? !password : false"
-                            @click.stop="e => handleClickButton()" class="vc-btn" type="button">
+                            @click.stop="e => handleClickButton(e, true)" class="vc-btn" type="button">
                             {{ dialog.button.yes }}
                         </button>
                     </div>
@@ -33,7 +33,7 @@
 <script setup>
 import { reactive, ref } from 'vue';
 
-const emit = defineEmits(["modal-close", "delete-modal"]);
+const emit = defineEmits(["modal-close"]);
 
 const password = ref(null);
 const dialog = reactive({
@@ -51,15 +51,12 @@ const props = defineProps({
         type: Boolean,
         default: false
     },
+
 });
 
-const handleClickButton = () => {
-    emit('delete-modal')
-
+const handleClickButton = (event, confirm) => {
+    emit('modal-close', confirm)
 }
-
-
-
 
 </script>
 

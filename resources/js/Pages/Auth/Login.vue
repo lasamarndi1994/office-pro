@@ -20,7 +20,7 @@
                                                 <div class="subheading-1 mb-5">to continue to app</div>
                                             </div>
                                             <!-- Login submission form-->
-                                            <form class="mb-5" @submit.prevent="form.post('/login')" id="form">
+                                            <form class="mb-5" @submit.prevent="login()" id="form">
                                                 <div class="mb-4">
                                                     <mwc-textfield class="w-100" label="Email *" outlined="" id="email"
                                                         </mwc-textfield>
@@ -108,8 +108,8 @@ const clearForm = () => {
     })
 }
 
-function submit() {
-    form.post('/profile', {
+function login() {
+    form.post('/login', {
         preserveScroll: true,
         onSuccess: () => {
             clearForm();

@@ -26,13 +26,13 @@ window.addEventListener('DOMContentLoaded', event => {
     }
 
     // Toggle the side navigation
-    const drawerToggle = document.body.querySelector('#drawerToggle');
-    if (drawerToggle) {
-        drawerToggle.addEventListener('click', event => {
-            event.preventDefault();
-            document.body.classList.toggle('drawer-toggled');
-        });
-    }
+    // const drawerToggle = document.body.querySelector('#drawerToggle');
+    // if (drawerToggle) {
+    //     drawerToggle.addEventListener('click', event => {
+    //         event.preventDefault();
+    //         document.body.classList.toggle('drawer-toggled');
+    //     });
+    // }
 
     // Close side navigation when width < LG
     const drawerContent = document.body.querySelector('#layoutDrawer_content');

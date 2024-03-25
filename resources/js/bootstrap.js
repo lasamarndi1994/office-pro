@@ -5,6 +5,10 @@
  */
 import 'bootstrap';
 import 'material-icons';
+import '@material/mwc-textfield';
+import '@material/mwc-select';
+import '@material/mwc-checkbox';
+
 import './script.js';
 
 //import

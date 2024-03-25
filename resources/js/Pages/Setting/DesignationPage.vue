@@ -49,8 +49,8 @@
                         <thead class="table-dark">
                             <tr>
                                 <th scope="col">Name</th>
-                                <th scope="">Status</th>
-                                <th scope="">Action</th>
+                                <th scope="col">Status</th>
+                                <th scope="col">Action</th>
                             </tr>
                         </thead>
                         <tbody>

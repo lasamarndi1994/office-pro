@@ -13,6 +13,8 @@ return new class extends Migration
     {
         Schema::create('designations', function (Blueprint $table) {
             $table->uuid('id')->primary();
+            $table->foreignUuid("department_id")->on('departments')->constrained()
+                ->cascadeOnDelete();
             $table->string("name")->unique();
             $table->boolean("status")->default(1);
             $table->timestamps();

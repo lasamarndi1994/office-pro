@@ -3,13 +3,12 @@
         <div class="row">
             <div class="col-xxl-8 col-lg-12 col-md-12">
                 <div class="row">
-
                     <div class="col-lg-6 col-md-12">
                         <div class="card employee-welcome-card flex-fill">
                             <div class="card-body">
                                 <div class="welcome-info">
                                     <div class="welcome-content">
-                                        <h4>Welcome Back, Darlee</h4>
+                                        <h4>Welcome Back, {{ $page.props.auth.user.first_name }}</h4>
                                         <p>You have <span>4 meetings</span> today,</p>
                                     </div>
                                     <div class="welcome-img">

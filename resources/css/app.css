@@ -1,1 +1,12 @@
-@import "./styles.css"
+@import "./styles.css";
+
+
+
+.modal-open {
+    overflow: visible !important;
+    position: absolute !important;
+    padding-right: 0 !important;
+    width: 100% !important;
+    height: 100% !important;
+
+}

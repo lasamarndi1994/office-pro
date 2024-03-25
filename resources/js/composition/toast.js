@@ -6,7 +6,11 @@ const $toast = ($message) => {
     toast($message, {
         "theme": "dark",
         "type": "info",
-        "dangerouslyHTMLString": true
+        "dangerouslyHTMLString": true,
+        "autoClose": 800,
+        "transition": "zoom",
+        "position": "bottom-center",
+
     })
 };
 

@@ -18,7 +18,8 @@ class AuthController extends Controller
 
         if (Auth::attempt($credentials)) {
             $request->session()->regenerate();
-            return redirect()->intended('dashboard');
+            return Inertia::location(route('dashboard'));
+            //return redirect()->intended('dashboard');
         }
 
         return back()->withErrors([
@@ -38,5 +39,13 @@ class AuthController extends Controller
         return Inertia::render('Auth/ResetPassword', [
 
         ]);
+    }
+
+    public function logout()
+    {
+        Auth::logout();
+        return Inertia::location(route('login'));
+        // return redirect()->intended('login');
+
     }
 }
